@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 
-const HotDogScreen = () => {
+const HotDogScreen = ({ navigation }) => {
+  //console.log("Navigating to: ", navigation); 
   return (
     <View style={styles.container}>
       <Image source={require('../assets/hotdog.png')} style={styles.image} />

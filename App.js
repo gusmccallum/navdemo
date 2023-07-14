@@ -3,11 +3,12 @@ import { StyleSheet, Text, View } from 'react-native';
 import 'react-native-gesture-handler';
 import StackNav from './Navigators/StackNav';
 import { NavigationContainer } from '@react-navigation/native';
+import TabNav from './Navigators/TabNav';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <StackNav/>
+      <TabNav/>
     </NavigationContainer>
   );
 }

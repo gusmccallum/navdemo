@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 
-const HamburgerScreen = ({ navigation }) => {
-  //console.log("Navigating to: ", navigation);
+const KetchupScreen = ({ navigation }) => {
+    console.log("Navigating to ketchup screen!!!");
   return (
     <View style={styles.container}>
-      <Image source={require('../assets/hamburger.jpg')} style={styles.image} />
+      <Image source={require('../assets/ketchup.png')} style={styles.image} />
     </View>
   );
 };
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HamburgerScreen;
+export default KetchupScreen;

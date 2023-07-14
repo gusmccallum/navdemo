@@ -1,31 +1,30 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HamburgerScreen from '../Screens/HamburgerScreen';
-import HotDogScreen from '../Screens/HotDogScreen';
-import FriesScreen from '../Screens/FriesScreen';
+import DrawerNav from './DrawerNav';
 
 const Tab = createBottomTabNavigator();
 
-const TabNav = ({ initialScreen }) => {
+const TabNav = () => {
   return (
-    <Tab.Navigator initialRouteName={initialScreen}>
+    <Tab.Navigator>
       <Tab.Screen
         name="HamburgerTab"
-        component={HamburgerScreen}
         options={{ headerShown: false }}
-      />
+      >
+        {() => <DrawerNav initialScreen="HamburgerDrawer" />}
+      </Tab.Screen>
       <Tab.Screen
         name="HotDogTab"
-        component={HotDogScreen}
         options={{ headerShown: false }}
-      />
-      Um... cheesed to beat you?
-      
+      >
+        {() => <DrawerNav initialScreen="HotDogDrawer" />}
+      </Tab.Screen>
       <Tab.Screen
         name="FriesTab"
-        component={FriesScreen}
         options={{ headerShown: false }}
-      />
+      >
+        {() => <DrawerNav initialScreen="FriesDrawer" />}
+      </Tab.Screen>
     </Tab.Navigator>
   );
 };
