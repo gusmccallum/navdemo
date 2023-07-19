@@ -6,7 +6,7 @@ const Tab = createBottomTabNavigator();
 
 const TabNav = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator id="TabNav">
       <Tab.Screen
         name="HamburgerTab"
         options={{ headerShown: false }}

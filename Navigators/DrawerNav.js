@@ -1,31 +1,50 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import HamburgerScreen from '../Screens/HamburgerScreen';
-import HotDogScreen from '../Screens/HotDogScreen';
-import FriesScreen from '../Screens/FriesScreen';
-import CondimentsScreen from '../Screens/CondimentsScreen';
+import { StyleSheet } from 'react-native';
 import StackNav from './StackNav';
-import KetchupScreen from '../Screens/KetchupScreen';
+
 
 const Drawer = createDrawerNavigator();
 
-const DrawerNav = ({ initialScreen }) => {
+const DrawerNav = ({ initialScreen}) => {
   return (
-    <Drawer.Navigator
+    <Drawer.Navigator id="DrawerNav"
       initialRouteName={initialScreen}
       screenOptions={{
         headerTitle: "Gus' Restaurant",
         headerTitleAlign: 'center',
       }}
     >
-      <Drawer.Screen name="HamburgerDrawer" component={HamburgerScreen}/>
-      <Drawer.Screen name="HotDogDrawer" component={HotDogScreen}/>
-      <Drawer.Screen name="FriesDrawer"component={FriesScreen}/>
-      <Drawer.Screen name="CondimentsDrawer" component={CondimentsScreen}/>
-      <Drawer.Screen name="KetchupDrawer" component={KetchupScreen}/>
+      <Drawer.Screen name="HamburgerDrawer"> 
+      {() => <StackNav initialScreen="HamburgerStack" />}
+      </Drawer.Screen>
+      <Drawer.Screen name="HotDogDrawer"> 
+      {() => <StackNav initialScreen="HotDogStack" />}
+      </Drawer.Screen>
+      <Drawer.Screen name="FriesDrawer">
+      {() => <StackNav initialScreen="FriesStack" />}
+        </Drawer.Screen>
+      <Drawer.Screen name="CondimentsDrawer"> 
+      {() => <StackNav initialScreen="CondimentsStack" />}
+      </Drawer.Screen>
     </Drawer.Navigator>
   );
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  link: {
+    marginBottom: 10,
+  },
+  linkText: {
+    fontSize: 20,
+    color: 'blue',
+    textDecorationLine: 'underline',
+  },
+});
 
 export default DrawerNav;

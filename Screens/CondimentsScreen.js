@@ -1,23 +1,20 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const CondimentsScreen = ({ navigation }) => {
-  const navigateToScreen = (screenName) => {
-    navigation.navigate(screenName);
-  };
-
+const CondimentsScreen = ( {navigation} ) => {
+    console.log("Navigation state is: ", navigation.getState());
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigateToScreen('KetchupStack')} style={styles.link}>
+      <TouchableOpacity onPress={() => navigation.navigate('KetchupStack')} style={styles.link}>
         <Text style={styles.linkText}>Ketchup</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigateToScreen('MustardStack')} style={styles.link}>
+      <TouchableOpacity onPress={() => navigation.navigate('MustardStack')} style={styles.link}>
         <Text style={styles.linkText}>Mustard</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigateToScreen('MayoStack')} style={styles.link}>
+      <TouchableOpacity onPress={() => navigation.navigate('MayoStack')} style={styles.link}>
         <Text style={styles.linkText}>Mayo</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigateToScreen('RelishStack')} style={styles.link}>
+      <TouchableOpacity onPress={() => navigation.navigate('RelishStack')} style={styles.link}>
         <Text style={styles.linkText}>Relish</Text>
       </TouchableOpacity>
     </View>

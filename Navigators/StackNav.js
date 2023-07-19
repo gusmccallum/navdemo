@@ -1,6 +1,5 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import DrawerNav from './DrawerNav';
 import HamburgerScreen from '../Screens/HamburgerScreen';
 import HotDogScreen from '../Screens/HotDogScreen';
 import FriesScreen from '../Screens/FriesScreen';
@@ -12,48 +11,49 @@ import CondimentsScreen from '../Screens/CondimentsScreen';
 
 const Stack = createStackNavigator();
 
-const StackNav = () => {
+const StackNav = ( {initialScreen} ) => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator id="StackNav"
+    initialRouteName={initialScreen}>
       <Stack.Screen
         name="HamburgerStack"
-        options={{ headerShown: false }}
         component={HamburgerScreen}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="HotDogStack"
-        options={{ headerShown: false }}
         component={HotDogScreen}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="FriesStack"
-        options={{ headerShown: false }}
         component={FriesScreen}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="CondimentsStack"
-        options={{ headerShown: false }}
         component={CondimentsScreen}
-      />      
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="KetchupStack"
-        options={{ headerShown: false }}
         component={KetchupScreen}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="MustardStack"
-        options={{ headerShown: false }}
         component={MustardScreen}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="MayoStack"
-        options={{ headerShown: false }}
         component={MayoScreen}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="RelishStack"
-        options={{ headerShown: false }}
         component={RelishScreen}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
