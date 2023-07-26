@@ -5,7 +5,6 @@ import StackNav from './StackNav';
 
 
 const Drawer = createDrawerNavigator();
-
 const DrawerNav = ({ initialScreen}) => {
   return (
     <Drawer.Navigator id="DrawerNav"
